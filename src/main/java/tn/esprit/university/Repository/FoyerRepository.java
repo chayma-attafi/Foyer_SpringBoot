@@ -6,4 +6,5 @@ import tn.esprit.university.models.Foyer;
 
 @Repository
 public interface FoyerRepository extends JpaRepository<Foyer,Long> {
+    Foyer findByUniversityIdUniveristy(Long idUniveristy);
 }

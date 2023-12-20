@@ -1,5 +1,6 @@
 package tn.esprit.university.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -27,10 +28,8 @@ public class Reservation implements Serializable {
     LocalDate anneeUniversity;
     Boolean estValide;
 
-   /* @ToString.Exclude
-    @ManyToOne
-    Chambre chambre;*/
 
+    @JsonIgnore
     @ToString.Exclude
     @ManyToMany
     List<Etudiant> etudiantList = new ArrayList<>();

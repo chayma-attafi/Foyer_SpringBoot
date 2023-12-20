@@ -39,6 +39,10 @@ public class FoyerImpl implements FoyerService {
         foyerRepository.deleteById(idFoyer);
     }
 
+    @Override
+    public Foyer RecupereFoyerDunUniversity(Long idUniversity) {
+        return foyerRepository.findByUniversityIdUniveristy(idUniversity);
+    }
 
 
 }

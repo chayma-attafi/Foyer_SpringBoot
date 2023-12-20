@@ -1,5 +1,6 @@
 package tn.esprit.university.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -25,10 +26,12 @@ public class Bloc implements Serializable {
     String nomBlock;
     long apitaleBlock;
 
+    @JsonIgnore
     @ToString.Exclude
     @ManyToOne
     Foyer foyer;
 
+    @JsonIgnore
     @ToString.Exclude
     @OneToMany(mappedBy = "bloc")
     List<Chambre> chambreList = new ArrayList<>();

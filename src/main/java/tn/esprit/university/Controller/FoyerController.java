@@ -12,7 +12,6 @@ import java.util.List;
 @Controller
 @AllArgsConstructor
 @RestController
-@FieldDefaults(level = AccessLevel.PRIVATE)
 @RequestMapping("Foyer")
 public class FoyerController {
     FoyerService foyerService;
@@ -43,6 +42,8 @@ public class FoyerController {
         foyerService.removeFoyer(idFoyer);
     }
 
-
-
+    @GetMapping("/RecupereFoyerDunUniversity/{idUniversity}")
+    public Foyer RecupereFoyerDunUniversity(@PathVariable Long idUniversity) {
+        return foyerService.RecupereFoyerDunUniversity(idUniversity);
+    }
 }

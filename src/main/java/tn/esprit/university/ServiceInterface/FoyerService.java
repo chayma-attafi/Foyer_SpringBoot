@@ -14,4 +14,5 @@ public interface FoyerService {
     Foyer retrieveFoyer (long idFoyer);
 
     void removeFoyer (long idFoyer);
+    Foyer RecupereFoyerDunUniversity(Long idUniversity);
 }

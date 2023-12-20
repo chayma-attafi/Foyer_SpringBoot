@@ -1,11 +1,12 @@
 package tn.esprit.university.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class Etudiant implements Serializable {
     long CIN;
     Date datedeNaissance;
 
+    @JsonIgnore
     @ToString.Exclude
     @ManyToMany(mappedBy = "etudiantList")
     List<Reservation> reservationList =new ArrayList<>();

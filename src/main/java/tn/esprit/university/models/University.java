@@ -1,5 +1,6 @@
 package tn.esprit.university.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -21,6 +22,7 @@ public class University implements Serializable {
 
     String nomUnivrsity,adresse;
 
+    @JsonIgnore
     @ToString.Exclude
     @OneToOne
     Foyer foyer;
