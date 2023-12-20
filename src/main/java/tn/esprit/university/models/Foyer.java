@@ -1,11 +1,10 @@
-package tn.esprit.foyer.models;
+package tn.esprit.university.models;
 
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter

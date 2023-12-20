@@ -1,4 +1,4 @@
-package tn.esprit.foyer.models;
+package tn.esprit.university.models;
 
 import jakarta.persistence.*;
 import lombok.*;
