@@ -45,4 +45,9 @@ public class BlocImpl implements BlocService {
     public Bloc recupereBlockDunChmabre(Long idChambrer) {
         return blocRepository.findByChambreListIdChambre(idChambrer);
     }
+
+    @Override
+    public List<Bloc> RecupererListBlockParNomFoyerAndAdresseUniversity(String nom, String adress) {
+        return blocRepository.findByFoyerNomFoyerContainsAndFoyerUniversityAdresseContains(nom,adress);
+    }
 }

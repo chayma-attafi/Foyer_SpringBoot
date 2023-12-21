@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.university.ServiceInterface.ChambreService;
+import tn.esprit.university.models.Bloc;
 import tn.esprit.university.models.Chambre;
+import tn.esprit.university.models.TypeChambre;
 
 import java.util.List;
 
@@ -39,4 +41,25 @@ public class ChambreController {
     public List<Chambre> RecupereListChambreDunBolc(@PathVariable Long idBloc) {
         return chambreService.RecupereListChambreDunBolc(idBloc);
     }
+
+    @GetMapping("/RecupereListChambreTypeDOUBLEandReservationValide/{typeChambre}")
+    public List<Chambre> RecupereListChambreTypeDOUBLEandReservationValide(@PathVariable TypeChambre typeChambre) {
+        return chambreService.RecupereListChambreTypeDOUBLEandReservationValide(typeChambre);
+    }
+
+    @GetMapping("/RecupererListChambreDunFoyerAvecUneCapacite/{capaciteFoyer}")
+    public List<Chambre> RecupererListChambreDunFoyerAvecUneCapacite(@PathVariable Long capaciteFoyer) {
+        return chambreService.RecupererListChambreDunFoyerAvecUneCapacite(capaciteFoyer);
+    }
+
+    //3
+
+    @PutMapping("/affecterChambresABloc/{idBloc}")
+    public Bloc affecterChambresABloc(@RequestBody List<Long> numChambre,
+                                      @PathVariable long idBloc) {
+        return chambreService.affecterChambresABloc(numChambre, idBloc);
+    }
+
+
+
 }

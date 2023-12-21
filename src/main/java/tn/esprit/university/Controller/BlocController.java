@@ -49,4 +49,10 @@ public class BlocController {
     public Bloc recupereBlockDunChmabre(@PathVariable Long idChambrer) {
         return blocService.recupereBlockDunChmabre(idChambrer);
     }
+
+    @GetMapping("/RecupererListBlockParNomFoyerAndAdresseUniversity/{nom}/{adress}")
+    public List<Bloc> RecupererListBlockParNomFoyerAndAdresseUniversity(@PathVariable String nom,
+                                                                        @PathVariable String adress) {
+        return blocService.RecupererListBlockParNomFoyerAndAdresseUniversity(nom, adress);
+    }
 }

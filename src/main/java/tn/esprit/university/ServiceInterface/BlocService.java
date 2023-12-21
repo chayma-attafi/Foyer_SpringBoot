@@ -17,4 +17,6 @@ public interface BlocService {
     List<Bloc> RecupererlistDdesblocsPourfoyer(Long idFoyer);
     Bloc recupereBlockDunChmabre(Long idChambrer);
 
+    List<Bloc> RecupererListBlockParNomFoyerAndAdresseUniversity(String nom, String adress);
+
 }

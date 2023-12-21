@@ -39,4 +39,10 @@ public class EtudiantController {
     public void removeEtudiant(@PathVariable long idEtudiant) {
         etudintService.removeEtudiant(idEtudiant);
     }
+
+    @GetMapping("/RecupereListEtudiantParAnnerUniversityActuell")
+    public List<Etudiant> RecupereListEtudiantParAnnerUniversityActuell() {
+        return etudintService.RecupereListEtudiantParAnnerUniversityActuell();
+    }
 }
+

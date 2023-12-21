@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.university.ServiceInterface.UniversityService;
+import tn.esprit.university.models.Foyer;
 import tn.esprit.university.models.University;
 
 import java.util.List;
@@ -35,4 +36,22 @@ public class UniversityController {
         return universityService.retrieveUniversite(idUniversite);
     }
 
+
+
+    @PutMapping("/affecterFoyerAUniversite/{idFoyer}/{nomUniversite}")
+    public University affecterFoyerAUniversite(@PathVariable long idFoyer,
+                                               @PathVariable String nomUniversite) {
+        return universityService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    }
+
+    @PutMapping("/desaffecterFoyerAUniversite/{idUniversite}")
+    public University desaffecterFoyerAUniversite(@PathVariable long idUniversite) {
+        return universityService.desaffecterFoyerAUniversite(idUniversite);
+    }
+
+    @PutMapping("/ajouterFoyerEtAffecterAUniversite/{idUniversite}")
+    public Foyer ajouterFoyerEtAffecterAUniversite(@RequestBody Foyer foyer,
+                                                   @PathVariable long idUniversite) {
+        return universityService.ajouterFoyerEtAffecterAUniversite(foyer, idUniversite);
+    }
 }

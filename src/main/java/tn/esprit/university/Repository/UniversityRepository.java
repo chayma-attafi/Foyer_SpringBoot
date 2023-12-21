@@ -6,4 +6,6 @@ import tn.esprit.university.models.University;
 
 @Repository
 public interface UniversityRepository extends JpaRepository<University,Long> {
+
+    University findByNomUnivrsityLike(String nom);
 }

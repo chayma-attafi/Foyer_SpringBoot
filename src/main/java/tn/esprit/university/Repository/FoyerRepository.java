@@ -6,5 +6,6 @@ import tn.esprit.university.models.Foyer;
 
 @Repository
 public interface FoyerRepository extends JpaRepository<Foyer,Long> {
+    //Récupérer le foyer d'une université.
     Foyer findByUniversityIdUniveristy(Long idUniveristy);
 }

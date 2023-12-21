@@ -6,6 +6,7 @@ import tn.esprit.university.Repository.EtudiantRepository;
 import tn.esprit.university.ServiceInterface.EtudintService;
 import tn.esprit.university.models.Etudiant;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -38,5 +39,11 @@ public class EtudiantImpl implements EtudintService {
     public void removeEtudiant(long idEtudiant) {
 
         etudiantRepository.deleteById(idEtudiant);
+    }
+
+    @Override
+    public List<Etudiant> RecupereListEtudiantParAnnerUniversityActuell() {
+        System.out.println(LocalDate.now());
+        return etudiantRepository.findByReservationListAnneeUniversity(LocalDate.now());
     }
 }

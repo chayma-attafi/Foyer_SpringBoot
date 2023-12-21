@@ -6,6 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -31,9 +32,10 @@ public class Foyer implements Serializable {
     @OneToOne(mappedBy = "foyer")
     University university;
 
-    @JsonIgnore
+    //cascade pour ajouter foyer et affecter bloc
+    //@JsonIgnore pour afficher liste des blocs
     @ToString.Exclude
-    @OneToMany(mappedBy = "foyer")
-    List<Bloc> blockList;
+    @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL)
+    List<Bloc> blockList=new ArrayList<>();
 
 }

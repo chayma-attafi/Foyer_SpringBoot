@@ -14,4 +14,5 @@ public interface EtudintService {
     Etudiant retrieveEtudiant(long idEtudiant);
 
     void removeEtudiant(long idEtudiant);
+    List<Etudiant> RecupereListEtudiantParAnnerUniversityActuell();
 }
